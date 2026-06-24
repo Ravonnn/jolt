@@ -1,0 +1,13 @@
+[package]
+name = "jolt-lexer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Lexer for the Jolt Tiny subset (hand-rolled, max-munch)"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+jolt-source = { path = "../jolt-source" }
+jolt-query = { path = "../jolt-query" }

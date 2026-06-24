@@ -1,0 +1,16 @@
+[package]
+name = "joltlings"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[[bin]]
+name = "joltlings"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+walkdir = "2.5"

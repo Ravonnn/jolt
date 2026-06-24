@@ -1,0 +1,7 @@
+@sum(nums: Int) Int ->
+    $$total = 0;
+    for x in nums ->
+        total = total + x;
+    ;;
+    total
+;;

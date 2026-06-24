@@ -1,0 +1,9 @@
+@main() None ->
+    $$c = 0;
+    for x in 5 ->
+        c = c + 1;
+    ;;
+    if c == 5 ->
+        println("5");
+    ;;
+;;

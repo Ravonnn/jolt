@@ -1,0 +1,7 @@
+@seq() None ->
+    $$data = "hello";
+    $v = borrow(data);
+    println(deref(v));
+    $e = claim(data);
+    println(deref(e));
+;;

@@ -1,0 +1,7 @@
+@seq_claim() None ->
+    $$data = "hello";
+    $e1 = claim(data);
+    println(deref(e1));
+    $e2 = claim(data);
+    println(deref(e2));
+;;

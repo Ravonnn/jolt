@@ -1,0 +1,10 @@
+@double(x: Int) Int ->
+    x * 2
+;;
+
+@main() None ->
+  $v = double(21);
+  if v == 42 ->
+      println("42");
+  ;;
+;;

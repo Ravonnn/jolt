@@ -1,0 +1,14 @@
+@max(a: Int, b: Int) Int ->
+    if a > b ->
+        a
+    ;; else ->
+        b
+    ;;
+;;
+
+@main() None ->
+    $m = max(3, 7);
+    if m == 7 ->
+        println("7");
+    ;;
+;;

@@ -1,0 +1,89 @@
+[[exercise]]
+name = "intro_1"
+path = "exercises/01_intro/main.jolt"
+hint = "Programs need @main and println takes a string."
+mode = "run"
+
+[[exercise]]
+name = "intro_2"
+path = "exercises/02_bindings/main.jolt"
+hint = "Use $$ for a mutable counter."
+mode = "run"
+
+[[exercise]]
+name = "intro_3"
+path = "exercises/03_double/main.jolt"
+hint = "Multiply x by 2 in the function body."
+mode = "run"
+
+[[exercise]]
+name = "intro_4"
+path = "exercises/04_if_else/main.jolt"
+hint = "The if branch should print 7 when m == 7."
+mode = "run"
+
+[[exercise]]
+name = "intro_5"
+path = "exercises/05_loop/main.jolt"
+hint = "Increment n until it reaches 10, then break."
+mode = "run"
+
+[[exercise]]
+name = "intro_6"
+path = "exercises/06_for/main.jolt"
+hint = "for x in n sums 0..n-1; sum(4) should be 6."
+mode = "run"
+
+[[exercise]]
+name = "intro_7"
+path = "exercises/07_borrow/main.jolt"
+hint = "Use borrow and deref to read data."
+mode = "run"
+
+[[exercise]]
+name = "intro_8"
+path = "exercises/08_arithmetic/main.jolt"
+hint = "y should be x * 3 after x = 1 + 2."
+mode = "run"
+
+[[exercise]]
+name = "intro_9"
+path = "exercises/09_max_fn/main.jolt"
+hint = "Return the larger of a and b from max."
+mode = "run"
+
+[[exercise]]
+name = "intro_10"
+path = "exercises/10_assert/main.jolt"
+hint = "assert_eq(2+2, 4) then println success."
+mode = "run"
+
+[[exercise]]
+name = "custody_1"
+path = "exercises/11_custody_ok/main.jolt"
+hint = "This should pass jolt check — verify borrow usage."
+mode = "check"
+
+[[exercise]]
+name = "test_1"
+path = "exercises/12_test/main.jolt"
+hint = "Fix assert_eq so the test passes."
+mode = "test"
+
+[[exercise]]
+name = "custody_2"
+path = "exercises/13_fix_move/main.jolt"
+hint = "Remove the second use of s after move."
+mode = "check"
+
+[[exercise]]
+name = "intro_11"
+path = "exercises/14_nested_if/main.jolt"
+hint = "Use if inside @main to print 42."
+mode = "run"
+
+[[exercise]]
+name = "intro_12"
+path = "exercises/15_count_for/main.jolt"
+hint = "Loop for x in 5 and count iterations."
+mode = "run"

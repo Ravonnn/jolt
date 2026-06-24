@@ -1,0 +1,15 @@
+[package]
+name = "jolt-parser"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Parser for the Jolt Tiny subset (recursive descent + Pratt)"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+jolt-ast = { path = "../jolt-ast" }
+jolt-lexer = { path = "../jolt-lexer" }
+jolt-query = { path = "../jolt-query" }
+jolt-source = { path = "../jolt-source" }

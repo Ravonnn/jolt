@@ -1,0 +1,5 @@
+@claim() None ->
+    $$data = "hi";
+    $e = claim(data);
+    println(deref(e));
+;;

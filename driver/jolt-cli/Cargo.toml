@@ -1,0 +1,14 @@
+[package]
+name = "jolt-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "The jolt command-line driver"
+
+[[bin]]
+name = "jolt"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+libjolt = { path = "../../compiler/libjolt" }

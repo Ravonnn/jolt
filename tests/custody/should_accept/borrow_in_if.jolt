@@ -1,0 +1,8 @@
+@if_borrow() None ->
+    $data = "hello";
+    if true ->
+        $v = borrow(data);
+        println(deref(v));
+    ;;
+    println("done");
+;;

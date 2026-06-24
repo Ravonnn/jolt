@@ -1,0 +1,33 @@
+# Custodian quiz 2 — Borrow vs claim
+
+## Question 1
+
+Can you `borrow` a value while an exclusive `claim` is active?
+
+- A) Yes
+- B) No
+
+**Answer:** B — shared and exclusive conflict.
+
+## Question 2
+
+What does `deref` do?
+
+- A) Frees memory
+- B) Reads through a `borrow` or `claim` handle
+- C) Creates a copy of a String
+
+**Answer:** B
+
+## Question 3
+
+For a loop counter you increment each iteration, which binding kind?
+
+- A) `$n`
+- B) `$$n`
+
+**Answer:** B
+
+---
+
+[ways to bind](../guides/ways-to-bind.md)

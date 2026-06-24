@@ -1,0 +1,13 @@
+[package]
+name = "jolt-test"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "jolt-test"
+path = "src/main.rs"
+
+[dependencies]
+libjolt = { path = "../../compiler/libjolt" }
+clap = { workspace = true }

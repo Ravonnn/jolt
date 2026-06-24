@@ -1,0 +1,62 @@
+// build.jolt — the build script IS a Jolt comptime program.
+// `jolt build` runs the @build entry below at compile time. Everything here is ordinary Jolt:
+// the Build API is just a stdlib module (`using Build`), so codegen, asset embedding, bindgen,
+// and target tweaks are all plain code — no foreign DSL.
+
+using Build;
+
+[build]                                  // marks the build entry point
+@build(b: $$Builder) !None ->
+    // ---- package metadata ----------------------------------------------------
+    b.package("myapp", "0.1.0");
+    b.kind(Kind.Program);                // Program | Library | StaticLib | DynLib | Firmware
+    b.edition("2026");
+
+    // ---- the main artifact ----------------------------------------------------
+    $exe = b.executable("myapp", "src/main.jolt");
+    exe.optimize(if b.release() -> Opt.O2 else -> Opt.O0 ;;);
+
+    // ---- dependencies ---------------------------------------------------------
+    exe.depend(b.registry("http", "1.2"));
+    exe.depend(b.registry("json", "0.4", features: ["derive"]));
+    exe.depend(b.git("sensor", url: "https://git…/sensor", rev: "a1b2c3"));
+    exe.depend(b.path("hal", "../hal"));
+
+    // ---- capability policy (enforced at resolve + compile) --------------------
+    // refuse any dependency that allocates or does I/O when building for embedded
+    if b.target().is_embedded() ->
+        b.forbid_capability(Cap.Alloc);
+        b.forbid_capability(Cap.Io);
+        exe.default_allocator(Alloc.Static);
+    ;;
+
+    // ---- comptime code generation (this is the point of build.jolt) -----------
+    // generate a version module from git + build time
+    $version_src = "[public] [const] $GIT_HASH = \"{b.git_hash()}\";\n"
+                 + "[public] [const] $BUILT_AT = \"{b.now_iso()}\";";
+    b.generate_module("build_info", version_src);     // import as `using build_info;`
+
+    // embed a file as a byte array at compile time
+    b.embed_asset("logo", "assets/logo.png");          // -> [const] $LOGO: Array<Byte, N>
+
+    // generate C bindings for a system library
+    b.bindgen(header: "/usr/include/zlib.h", into: "zlib", link: "z");
+
+    // ---- conditional / per-target tweaks --------------------------------------
+    match b.target().os() ->
+        Os.Linux   -> exe.link_system("pthread");
+        Os.Windows -> exe.link_system("ws2_32");
+        Os.None    -> exe.linker_script("link.ld");    // freestanding/firmware
+        _          -> ();
+    ;;
+
+    // ---- build steps & custom commands ----------------------------------------
+    $test_step = b.step("test", "run the suite");
+    test_step.runs(b.test_runner(exe));
+
+    $fmt_step = b.step("fmt", "format sources");
+    fmt_step.runs(b.shell("jolt fmt"));
+
+    // default = build the exe; `jolt build test` runs the test step, etc.
+    b.default(exe);
+;;

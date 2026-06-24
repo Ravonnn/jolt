@@ -1,0 +1,19 @@
+[package]
+name = "jolt-test-runner"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Tiny [test] discovery and execution"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+jolt-ast = { path = "../jolt-ast" }
+jolt-backend-interp = { path = "../jolt-backend-interp" }
+jolt-lexer = { path = "../jolt-lexer" }
+jolt-mir = { path = "../jolt-mir" }
+jolt-parser = { path = "../jolt-parser" }
+jolt-query = { path = "../jolt-query" }
+jolt-resolve = { path = "../jolt-resolve" }
+jolt-source = { path = "../jolt-source" }

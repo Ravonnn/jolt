@@ -1,0 +1,14 @@
+@sum(n: Int) Int ->
+    $$t = 0;
+    for x in n ->
+        t = t + x;
+    ;;
+    t
+;;
+
+@main() None ->
+    $s = sum(4);
+    if s == 6 ->
+        println("6");
+    ;;
+;;

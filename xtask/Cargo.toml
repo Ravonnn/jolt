@@ -1,0 +1,16 @@
+[package]
+name = "xtask"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[[bin]]
+name = "xtask"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+jolt-harness = { path = "../compiler/jolt-harness" }
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"

@@ -1,0 +1,32 @@
+# Custodian quiz 3 — Tracing
+
+Consider:
+
+```jolt
+$data = "hi";
+$v = borrow(data);
+println(deref(v));
+```
+
+## Question 1
+
+Who owns `data` after `borrow`?
+
+- A) `v` owns it
+- B) `data` still owns it; `v` is a borrow handle
+- C) Ownership transferred
+
+**Answer:** B
+
+## Question 2
+
+Can you add `$v2 = borrow(data)` while `v` is still in use?
+
+- A) Yes — another shared borrow
+- B) No
+
+**Answer:** A (in Tiny, if no conflicting claim)
+
+---
+
+Practice: {{#snippet tutorial/borrow_shared}}

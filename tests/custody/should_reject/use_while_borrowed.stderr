@@ -1,0 +1,1 @@
+4:13: error: custody violation: cannot use `data` while borrowed [E0402]; hint: wait until borrow handles on this value expire (last use), then use it again

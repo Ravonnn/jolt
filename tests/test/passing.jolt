@@ -1,0 +1,9 @@
+[test]
+@adds_two_and_three() None ->
+    assert_eq(2 + 3, 5);
+;;
+
+[test]
+@bool_ok() None ->
+    assert_eq(true, true);
+;;

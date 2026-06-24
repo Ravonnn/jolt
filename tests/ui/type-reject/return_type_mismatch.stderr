@@ -1,0 +1,1 @@
+1:1: error: function returns Int but body has type Bool [E0301]

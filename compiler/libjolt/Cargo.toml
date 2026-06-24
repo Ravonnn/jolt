@@ -1,0 +1,30 @@
+[package]
+name = "libjolt"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Umbrella library for the Jolt stage-0 compiler"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+jolt-source = { path = "../jolt-source" }
+jolt-lexer = { path = "../jolt-lexer" }
+jolt-ast = { path = "../jolt-ast" }
+jolt-parser = { path = "../jolt-parser" }
+jolt-query = { path = "../jolt-query" }
+jolt-resolve = { path = "../jolt-resolve" }
+jolt-types = { path = "../jolt-types" }
+jolt-custody = { path = "../jolt-custody" }
+jolt-capability = { path = "../jolt-capability" }
+jolt-comptime = { path = "../jolt-comptime" }
+jolt-mono = { path = "../jolt-mono" }
+jolt-mir = { path = "../jolt-mir" }
+jolt-backend-interp = { path = "../jolt-backend-interp" }
+jolt-test-runner = { path = "../jolt-test-runner" }
+jolt-backend-llvm = { path = "../jolt-backend-llvm" }
+jolt-backend-fast = { path = "../jolt-backend-fast" }
+jolt-diagnostics = { path = "../jolt-diagnostics" }
+jolt-cache = { path = "../jolt-cache" }
+jolt-fmt = { path = "../jolt-fmt" }

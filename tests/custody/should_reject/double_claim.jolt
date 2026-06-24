@@ -1,0 +1,6 @@
+@bad() None ->
+    $$data = "hello";
+    $e1 = claim(data);
+    $e2 = claim(data);
+    println(deref(e2));
+;;

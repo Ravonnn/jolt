@@ -1,0 +1,5 @@
+@bad() None ->
+    $data = "hello";
+    $v = borrow(data);
+    println(data);
+;;

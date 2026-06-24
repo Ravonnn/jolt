@@ -1,0 +1,11 @@
+[package]
+name = "jolt-diagnostics"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+jolt-source = { path = "../jolt-source" }

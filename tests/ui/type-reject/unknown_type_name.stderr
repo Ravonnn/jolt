@@ -1,0 +1,2 @@
+1:6: error: unknown type 'Foo' [E0302]
+1:1: error: function returns <error> but body has type Int [E0301]

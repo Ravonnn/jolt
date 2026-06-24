@@ -1,0 +1,23 @@
+[book]
+title = "Jolt Documentation"
+authors = ["Jolt Contributors"]
+description = "Language specification, design corpus, and compiler roadmap for Jolt."
+language = "en"
+multilingual = false
+src = "."
+
+[build]
+build-dir = "book"
+create-missing = false
+
+[output.html]
+default-theme = "rust"
+preferred-dark-theme = "ayu"
+git-repository-url = "https://github.com/jolt-lang/jolt"
+edit-url-template = "https://github.com/jolt-lang/jolt/edit/main/docs/{path}"
+additional-js = ["learn/assets/jolt-run.js"]
+additional-css = ["learn/assets/learn.css"]
+
+[output.html.search]
+enable = true
+boost-hierarchy = 2

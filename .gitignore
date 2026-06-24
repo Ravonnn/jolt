@@ -1,0 +1,19 @@
+/target/
+**/*.rs.bk
+*.pdb
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local Jolt cache (future)
+.jolt/
+
+# mdBook output
+docs/book/

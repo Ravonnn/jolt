@@ -1,0 +1,19 @@
+[package]
+name = "jolt-types"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+jolt-ast = { path = "../jolt-ast" }
+jolt-diagnostics = { path = "../jolt-diagnostics" }
+jolt-resolve = { path = "../jolt-resolve" }
+jolt-parser = { path = "../jolt-parser" }
+jolt-query = { path = "../jolt-query" }
+jolt-source = { path = "../jolt-source" }
+
+[dev-dependencies]
+jolt-lexer = { path = "../jolt-lexer" }

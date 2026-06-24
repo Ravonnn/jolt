@@ -1,0 +1,5 @@
+@deref_only() None ->
+    $$data = "hi";
+    $e = claim(data);
+    println(deref(e));
+;;

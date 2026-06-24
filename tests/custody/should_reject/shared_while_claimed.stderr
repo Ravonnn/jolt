@@ -1,0 +1,1 @@
+4:17: error: custody violation: cannot borrow `data` while claimed [E0404]; hint: drop the active claim handle before taking a shared borrow

@@ -1,0 +1,6 @@
+@swap() None ->
+    $a = 1;
+    $$b = 2;
+    b = 3;
+    println("ok");
+;;

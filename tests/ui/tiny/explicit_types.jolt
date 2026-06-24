@@ -1,0 +1,4 @@
+@typed() Int ->
+    $x: Int = 10;
+    x
+;;

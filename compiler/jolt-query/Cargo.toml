@@ -1,0 +1,9 @@
+[package]
+name = "jolt-query"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Query engine: memoization, dependency tracking, red/green invalidation"
+
+[lib]
+path = "src/lib.rs"

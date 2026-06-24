@@ -1,0 +1,19 @@
+[package]
+name = "jolt-fmt"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+jolt-ast = { path = "../jolt-ast" }
+jolt-parser = { path = "../jolt-parser" }
+jolt-query = { path = "../jolt-query" }
+jolt-source = { path = "../jolt-source" }
+
+[dev-dependencies]
+jolt-lexer = { path = "../jolt-lexer" }
+jolt-resolve = { path = "../jolt-resolve" }
+jolt-types = { path = "../jolt-types" }

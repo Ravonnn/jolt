@@ -1,0 +1,7 @@
+@shared() None ->
+    $data = "hello";
+    $v1 = borrow(data);
+    $v2 = borrow(data);
+    println(deref(v1));
+    println(deref(v2));
+;;

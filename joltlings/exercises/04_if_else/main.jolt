@@ -1,0 +1,6 @@
+@main() None ->
+    $m = 7;
+    if m == 7 ->
+        println("7");
+    ;;
+;;

@@ -1,0 +1,5 @@
+@move() None ->
+    $a = "hello";
+    $b = a;
+    println(b);
+;;

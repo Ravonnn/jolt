@@ -1,0 +1,13 @@
+[package]
+name = "jolt-harness"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Test corpora discovery and smoke runners"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+libjolt = { path = "../libjolt" }
+walkdir = { workspace = true }

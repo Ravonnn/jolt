@@ -1,0 +1,5 @@
+@main() None ->
+    $data = "hi";
+    $v = borrow(data);
+    println(deref(v));
+;;

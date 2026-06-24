@@ -1,0 +1,5 @@
+@bad() None ->
+    $a = "hello";
+    $b = a;
+    println(a);
+;;

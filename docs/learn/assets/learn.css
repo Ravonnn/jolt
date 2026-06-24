@@ -1,0 +1,99 @@
+.jolt-cell {
+  margin: 1em 0;
+  border: 1px solid var(--searchbar-border-color, #ccc);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.jolt-editor {
+  display: block;
+  width: 100%;
+  min-height: 8em;
+  font-family: var(--mono-font, "Source Code Pro", monospace);
+  font-size: 0.9em;
+  padding: 0.75em;
+  border: none;
+  border-bottom: 1px solid var(--searchbar-border-color, #eee);
+  background: var(--bg, #fafafa);
+  color: var(--fg, #333);
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.jolt-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0.5em 0.75em;
+  background: var(--sidebar-bg, #f0f0f0);
+}
+
+.jolt-toolbar button {
+  font-size: 0.85em;
+  padding: 0.25em 0.75em;
+  cursor: pointer;
+}
+
+.jolt-output {
+  margin: 0;
+  padding: 0.75em;
+  font-family: var(--mono-font, monospace);
+  font-size: 0.85em;
+  white-space: pre-wrap;
+  min-height: 1.5em;
+}
+
+.jolt-output.ok {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.jolt-output.error {
+  background: #ffebee;
+  color: #b71c1c;
+}
+
+.jolt-output.offline {
+  background: #fff8e1;
+  color: #e65100;
+}
+
+.jolt-output.pending {
+  background: #e3f2fd;
+  color: #0d47a1;
+}
+
+.edition-badge {
+  display: inline-block;
+  font-size: 0.75em;
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  margin-left: 0.5em;
+  font-weight: 600;
+}
+
+.edition-badge.tiny {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.edition-badge.core {
+  background: #bbdefb;
+  color: #0d47a1;
+}
+
+.edition-badge.full {
+  background: #e0e0e0;
+  color: #424242;
+}
+
+.path-card {
+  border: 1px solid var(--searchbar-border-color, #ddd);
+  border-radius: 6px;
+  padding: 1em 1.25em;
+  margin: 0.75em 0;
+}
+
+.path-card h3 {
+  margin-top: 0;
+}

@@ -1,0 +1,13 @@
+[package]
+name = "jolt-fmt-bin"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "jolt-fmt"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+libjolt = { path = "../../compiler/libjolt" }

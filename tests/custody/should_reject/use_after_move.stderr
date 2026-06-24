@@ -1,0 +1,1 @@
+4:13: error: custody violation: use of moved value `a` [E0401]; hint: borrow `a` before the last use, or clone if the type supports copy

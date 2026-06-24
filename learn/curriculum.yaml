@@ -1,0 +1,209 @@
+# Jolt Learn — curriculum manifest
+# Single source of truth for lesson ordering, snippets, and CI verification.
+
+editions:
+  tiny:
+    compiler_phase: "3c"
+    commands:
+      - check
+      - fmt
+      - run --interpret
+      - test
+  core:
+    compiler_phase: "4+"
+    commands:
+      - check
+      - fmt
+      - run --interpret
+      - test
+  full:
+    compiler_phase: "year-3+"
+    commands: []
+
+paths:
+  beginner:
+    description: Complete beginner — start from Hello World
+    modules:
+      - getting-started
+      - custodian-intro
+      - control-flow
+      - testing
+  examples:
+    description: Learn by short, runnable examples
+    modules:
+      - by-example
+  exercises:
+    description: Hands-on drills with Joltlings
+    modules:
+      - joltlings
+
+modules:
+  getting-started:
+    lessons:
+      - tour-01-hello
+      - tour-02-bindings
+      - tour-03-functions
+  custodian-intro:
+    lessons:
+      - tour-04-custodian
+      - tour-04-borrow-shared
+  control-flow:
+    lessons:
+      - tour-06-if-else
+      - tour-06-loop
+      - tour-06-for
+  testing:
+    lessons:
+      - tour-11-testing
+  by-example:
+    lessons: [] # populated via examples/*.md index
+
+lessons:
+  - id: tour-01-hello
+    file: learn/tour/01-hello.md
+  - id: tour-02-bindings
+    file: learn/tour/02-bindings.md
+  - id: tour-03-functions
+    file: learn/tour/03-functions.md
+  - id: tour-04-custodian
+    file: learn/tour/04-custodian.md
+  - id: tour-04-borrow-shared
+    file: learn/tour/04-borrow-shared.md
+  - id: tour-06-if-else
+    file: learn/tour/06-if-else.md
+  - id: tour-06-loop
+    file: learn/tour/06-loop.md
+  - id: tour-06-for
+    file: learn/tour/06-for.md
+  - id: tour-11-testing
+    file: learn/tour/11-testing.md
+
+snippets:
+  tutorial/hello:
+    path: tests/tutorial/hello.jolt
+    expected_stdout: tests/tutorial/hello.stdout
+    harness: tutorial_corpus
+  tutorial/bindings:
+    path: tests/tutorial/bindings.jolt
+    expected_stdout: tests/tutorial/bindings.stdout
+    harness: tutorial_corpus
+  tutorial/double:
+    path: tests/tutorial/double.jolt
+    expected_stdout: tests/tutorial/double.stdout
+    harness: tutorial_corpus
+  tutorial/borrow_shared:
+    path: tests/tutorial/borrow_shared.jolt
+    harness: tutorial_corpus
+  tutorial/if_else:
+    path: tests/tutorial/if_else.jolt
+    expected_stdout: tests/tutorial/if_else.stdout
+    harness: tutorial_corpus
+  tutorial/loop_break:
+    path: tests/tutorial/loop_break.jolt
+    expected_stdout: tests/tutorial/loop_break.stdout
+    harness: tutorial_corpus
+  tutorial/for_sum:
+    path: tests/tutorial/for_sum.jolt
+    expected_stdout: tests/tutorial/for_sum.stdout
+    harness: tutorial_corpus
+  tutorial/testing:
+    path: tests/tutorial/testing.jolt
+    harness: tutorial_corpus
+  run/arithmetic:
+    path: tests/run/arithmetic.jolt
+    expected_stdout: tests/run/arithmetic.stdout
+    harness: run_corpus
+  run/hello:
+    path: tests/run/hello.jolt
+    expected_stdout: tests/run/hello.stdout
+    harness: run_corpus
+  custody/shared_borrows:
+    path: tests/custody/should_accept/shared_borrows.jolt
+    harness: custody_corpus
+  custody/string_move:
+    path: tests/custody/should_accept/string_move_ok.jolt
+    harness: custody_corpus
+  test/passing:
+    path: tests/test/passing.jolt
+    harness: test_corpus
+  test/should_fail:
+    path: tests/test/should_fail.jolt
+    harness: test_corpus
+
+examples:
+  - id: hello-world
+    file: learn/examples/hello-world.md
+    snippet: tutorial/hello
+  - id: bindings-mutable
+    file: learn/examples/bindings-mutable.md
+    snippet: tutorial/bindings
+  - id: function-tail-expr
+    file: learn/examples/function-tail-expr.md
+    snippet: tutorial/double
+  - id: if-else
+    file: learn/examples/if-else.md
+    snippet: tutorial/if_else
+  - id: loop-break
+    file: learn/examples/loop-break.md
+    snippet: tutorial/loop_break
+  - id: for-range-int
+    file: learn/examples/for-range-int.md
+    snippet: tutorial/for_sum
+  - id: arithmetic
+    file: learn/examples/arithmetic.md
+    snippet: run/arithmetic
+  - id: borrow-shared
+    file: learn/examples/borrow-shared.md
+    snippet: custody/shared_borrows
+  - id: move-string
+    file: learn/examples/move-string.md
+    snippet: custody/string_move
+  - id: test-assert-eq
+    file: learn/examples/test-assert-eq.md
+    snippet: test/passing
+  - id: test-should-fail
+    file: learn/examples/test-should-fail.md
+    snippet: test/should_fail
+  - id: println-basics
+    file: learn/examples/println-basics.md
+    snippet: run/hello
+  - id: max-function
+    file: learn/examples/max-function.md
+    snippet: tutorial/if_else
+  - id: mutable-claim
+    file: learn/examples/mutable-claim.md
+    snippet: custody/shared_borrows
+  - id: bindings-immutable
+    file: learn/examples/bindings-immutable.md
+    snippet: tutorial/bindings
+  - id: double-value
+    file: learn/examples/double-value.md
+    snippet: tutorial/double
+
+guides:
+  - id: ways-to-bind
+    file: learn/guides/ways-to-bind.md
+  - id: ways-to-borrow
+    file: learn/guides/ways-to-borrow.md
+  - id: ways-to-iterate
+    file: learn/guides/ways-to-iterate.md
+  - id: ways-to-test
+    file: learn/guides/ways-to-test.md
+  - id: ways-to-return
+    file: learn/guides/ways-to-return.md
+
+migrations:
+  - id: from-rust
+    file: learn/migrations/from-rust.md
+  - id: from-go
+    file: learn/migrations/from-go.md
+  - id: from-c
+    file: learn/migrations/from-c.md
+
+quizzes:
+  - id: custodian-01
+    file: learn/quizzes/custodian-01.toml
+  - id: custodian-02
+    file: learn/quizzes/custodian-02.toml
+  - id: custodian-03
+    file: learn/quizzes/custodian-03.toml

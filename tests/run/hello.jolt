@@ -1,0 +1,3 @@
+@main() None ->
+    println("Hello, Jolt!");
+;;

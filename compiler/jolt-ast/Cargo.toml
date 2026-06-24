@@ -1,0 +1,12 @@
+[package]
+name = "jolt-ast"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "AST for the Jolt Tiny subset"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+jolt-source = { path = "../jolt-source" }

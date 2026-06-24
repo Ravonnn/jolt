@@ -1,0 +1,62 @@
+name: Docs
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.85.0
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Build jolt-cli (for learn runner smoke)
+        run: cargo build -p jolt-cli
+
+      - name: Verify learn manifest
+        run: cargo run -p xtask -- learn verify
+
+      - name: Install mdbook
+        run: cargo install mdbook --locked
+
+      - name: Build documentation
+        run: cargo xtask docs build
+
+      - name: Install Pagefind
+        run: npm install -g pagefind
+
+      - name: Index search (Pagefind)
+        run: pagefind --site docs/book
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/book
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

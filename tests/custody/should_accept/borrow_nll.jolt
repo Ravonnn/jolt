@@ -1,0 +1,7 @@
+@nll() None ->
+    $data = "hello";
+    $v = borrow(data);
+    println(deref(v));
+    $w = borrow(data);
+    println(deref(w));
+;;
