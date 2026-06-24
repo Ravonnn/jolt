@@ -45,6 +45,18 @@ jobs:
       - name: Index search (Pagefind)
         run: pagefind --site docs/book
 
+      - name: Show built docs and verify index.html
+        run: |
+          echo "=== Listing docs/book (recursive) ==="
+          ls -laR docs/book || true
+          echo "=== Top-level files in docs/book ==="
+          ls -la docs/book || true
+          if [ -f docs/book/index.html ]; then
+            echo "OK: docs/book/index.html found"
+          else
+           echo "::error::ERROR: docs/book/index.html not found — aborting upload/deploy"
+           exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
